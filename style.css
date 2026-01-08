@@ -128,7 +128,7 @@ nav {
 
 /* Styling Logo Gambar */
 .logo-img {
-  height: 40px;
+  height: 24px;
   /* Sesuaikan tinggi logo */
   width: auto;
   object-fit: contain;
@@ -136,7 +136,7 @@ nav {
 
 /* Ini mengatur logo kedua (logo.png) agar ada pembatasnya */
 .logo img:nth-child(2) {
-  height: 60px;
+  height: 40px;
   border-left: 2px solid #12d800;
   /* Garis pembatas hijau */
   padding-left: 12px;
@@ -146,7 +146,7 @@ nav {
   color: #12d800;
   /* Warna hijau teks logo */
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin-left: 5px;
 }
 
