@@ -119,6 +119,7 @@ nav {
 }
 
 /* Container Logo Baru */
+/* Pastikan kontainer utama logo rata tengah secara vertikal */
 .logo {
   display: flex;
   align-items: center;
@@ -126,28 +127,30 @@ nav {
   text-decoration: none;
 }
 
-/* Styling Logo Gambar */
+/* KHUSUS: Membuat link pembungkus logo2 tetap berperan sebagai flex-item */
+.logo a {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  /* Menghilangkan sisa ruang teks di bawah link */
+}
+
+/* Pastikan semua gambar logo memiliki dasar tinggi yang seimbang */
 .logo-img {
-  height: 24px;
-  /* Sesuaikan tinggi logo */
+  height: 29px;
+  /* Anda bisa sesuaikan ukuran ini */
   width: auto;
+  display: block;
   object-fit: contain;
 }
 
-/* Ini mengatur logo kedua (logo.png) agar ada pembatasnya */
-.logo img:nth-child(2) {
-  height: 40px;
+/* CSS Anda sebelumnya untuk logo kedua (pembatas hijau) */
+.logo img:nth-child(2),
+.logo img.logo-moringa {
+  /* Tambahkan class jika perlu agar spesifik */
+  height: 44px;
   border-left: 2px solid #12d800;
-  /* Garis pembatas hijau */
   padding-left: 12px;
-}
-
-.logo h2 {
-  color: #12d800;
-  /* Warna hijau teks logo */
-  font-weight: 800;
-  font-size: 1.4rem;
-  margin-left: 5px;
 }
 
 .nav-links {
@@ -439,44 +442,74 @@ nav {
 footer {
   position: relative;
   z-index: 10;
-  /* Menaikkan lapisan footer agar link bisa diklik */
   background: #097100;
   color: white;
-  padding: 60px 8% 30px;
+
+  /* UKURAN KECIL: Padding atas dan bawah diperkecil (misal: 30px) */
+  padding: 30px 8%;
+
+  /* RATA TENGAH: Memastikan konten tetap di tengah meskipun background sempit */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
 }
 
 footer h2 {
-  color: #ffff;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  /* Perkecil ukuran teks agar cocok dengan footer kecil */
+  margin: 0;
+  /* Hapus margin agar tidak mendorong background jadi besar */
+  line-height: 1.2;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  /* Jarak tipis antara judul dan slogan */
 }
 
 .footer-socials {
-  margin: 25px 0;
+  margin: 15px 0;
+  /* Jarak ikon sosial media yang lebih rapat */
 }
 
 .footer-socials a {
-  display: inline-block;
-  position: relative;
-  z-index: 20;
-  /* Ikon berada di atas segalanya */
-  color: white;
-  font-size: 1.6rem;
-  margin: 0 15px;
-  transition: var(--transition);
-  text-decoration: none;
+  font-size: 1.2rem;
+  /* Ukuran ikon diperkecil */
+  margin: 0 10px;
 }
 
-.footer-socials a:hover {
-  color: #373737;
-  /* Warna oranye saat di-hover agar terlihat bekerja */
-  transform: scale(1.2);
+/* Warna Ikon */
+.footer-socials .fa-instagram {
+  color: #ffff;
+}
+
+.footer-socials .fa-tiktok {
+  color: #ffffff;
+}
+
+/* Hover */
+.footer-socials a:hover .fa-instagram {
+  color: #E4405F;
+  transform: scale(1.3);
+  /* Membesar 30% */
+}
+
+.footer-socials a:hover .fa-tiktok {
+  color: #00f2ea;
+  transform: scale(1.3);
+  /* Efek bayangan khas TikTok */
+  filter: drop-shadow(2px 0px 0px #fe2c55);
 }
 
 .copyright {
-  margin-top: 40px;
-  font-size: 0.8rem;
-  opacity: 0.5;
+  margin-top: 10px;
+  /* Jarak tipis ke teks hak cipta */
+  font-size: 0.7rem;
+  opacity: 0.6;
 }
 
 /* --- FLOATING WA --- */
